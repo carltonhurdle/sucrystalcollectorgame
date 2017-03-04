@@ -1,0 +1,210 @@
+/* you will notice that i like to use viewport width or percentage
+when possible for any responsive design, normally, you would like 
+to use percentage as your measuring tool... only one type of browser
+will not be able to use your website. for those browsers, make sure to use
+percentages/pixels as your failsafe backup.
+*/
+
+/*
+I did not want to customize bootstrap yet, so I did not add the
+additional breakpoints for landscape phone vs portrait phone.
+Alternatively, I could use max-height/max-width for particular
+elements to support landscape or change font-size/height/widths
+when the screen-size height shrinks. But I got lazy.
+So the supported devices are phones/ipads in portrait mode and 
+desktop which is still a significant improvement over fixed width.
+*/
+body {
+	background-color: #222631;
+	font-family: "Verdana", "Geneva", sans-serif;
+	color: white;
+	font-weight: bold;
+
+    /* add rules that will support my giphy images */
+    background-position: 50% 0%;
+    background-size:cover;
+    background-attachment: scroll;
+    background-repeat:no-repeat;
+}
+
+#main {
+	background-color: black;
+    background-color: rgba(0,0,0,.5);
+}
+
+#game-title {
+	background-color: #FD5690;
+	background-color: rgba(253, 86, 144, 0.7);
+	text-align: center;
+	font-size: 24px;
+	font-size: 4vw;
+	font-weight: 900;
+	padding:2.5%;
+	transition: letter-spacing .2s linear;
+}
+
+.normal #game-title {
+	background-color: #FD5690;
+}
+
+#game-rules-wrapper{
+	text-align:center;
+}
+#game-rules-button{
+	background-color: rgba(91,192,222,0.7);
+	margin:2%;
+	width:50%;
+	font-size:20px;
+	font-size:4vw;
+	border-radius:0px;
+}
+.normal #game-rules-button{
+	background-color: rgba(91,192,222,1);
+}
+#game-rules {
+	background-color: #9324C6;
+	background-color: rgba(147,36,198,0.7);
+	padding:3%;
+	text-align:left;
+	font-size:14px;
+	font-size:2.4vw;
+}
+
+.normal #game-rules {
+	background-color: #9324C6;
+}
+
+.sbs-container {
+}
+
+.title {
+	/*using viewport whenever possible and having pixel as a fallback*/
+    font-size: 16px;
+    font-size: 4vw;
+	text-align: center;
+}
+
+.number {
+	text-align: center;
+	font-size: 26px;
+	font-size: 6.5vw;
+}
+.sbs-inner{
+	padding:9%;
+	padding:2vw;
+	height:20vw;
+	margin-top:5%;
+}
+
+.sbs-container{
+}
+
+
+
+#wins {
+ 	background-color: #C86C95;
+	background-color: rgba(200,108,149, 0.7);
+}
+
+#losses {
+ 	background-color: #C95F8D;
+	background-color: rgba(201,95,141, 0.7);
+}
+
+#target-number {
+	background-color: #236BE7;
+	background-color: rgba(35,107,231, 0.7);
+}
+
+#running-total {
+	background-color: #1E8FF4;
+	background-color: rgba(30, 143, 244, 0.7);
+}
+
+.normal #wins {
+ 	background-color: #C86C95;
+}
+
+.normal #losses {
+ 	background-color: #C95F8D;
+}
+
+.normal #target-number {
+	background-color: #236BE7;
+}
+
+.normal #running-total {
+	background-color: #1E8FF4;
+}
+
+#message {
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	padding: 5% 0% 2%;
+
+	font-size: 33px;
+	font-size: 6vw;
+}
+
+#crystal-buttons {
+
+}
+#crystal-buttons img {
+	/* changes cursor to hand*/
+	cursor: pointer; 
+	cursor: hand;
+
+	padding:11%;
+	padding:4vw;
+	
+	/*max-height with percentage does not do anything*/
+	/*max-height:41.66666667%;*/
+
+	/*fixes issue with crystals not lining up*/
+	/*this uses viewport width*/
+	/* i wanted all crystals to be the same size*/
+	width:41.66666667vw;
+	height:37.66666667vw;
+
+	transition: padding .3s linear;
+	opacity:0.8;
+}
+@media screen and (min-width: 768px){
+	.title {
+		/*using viewport whenever possible and having pixel as a fallback*/
+	    font-size: 14px;
+	    font-size: 1.9vw;
+		text-align: center;
+	}
+
+	.number {
+		text-align: center;
+		font-size: 34px;
+		font-size: 4.5vw;
+	}
+	.sbs-inner{
+		padding:9%;
+		padding:2vw;
+		max-height:13vw;
+	}
+
+	/*aligns with bootstrap's breakpoint rules for small screens*/
+	#crystal-buttons img {
+		padding:9%;
+		padding:2vw;
+		
+		/*max-height with percentage does not do anything*/
+		/*max-height:25%;*/
+
+		/*fixes issue with crystals not lining up*/
+		/*this uses viewport width*/
+		/* i wanted all crystals to be the same size*/
+		height:22vw;
+		width:25vw;
+	}
+}
+
+.normal #crystal-buttons img {
+	opacity: 1.0;
+}
